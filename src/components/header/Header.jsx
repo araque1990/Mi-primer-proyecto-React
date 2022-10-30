@@ -1,7 +1,7 @@
 const Header = () => {
   return(
     <header>
-      <section>
+      <section class = "apartados">
         <nav><a href="/">Home</a></nav>
         <nav><a href="/products">Products</a></nav>
         <nav><a href="/services">Services</a></nav>

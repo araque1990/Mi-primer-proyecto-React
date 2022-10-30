@@ -68,3 +68,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.apartados {
+  display:inline-block;
+  margin-bottom: 2em;
+}
+
+nav {
+  display: inline-block;
+  margin: 1em;
+}

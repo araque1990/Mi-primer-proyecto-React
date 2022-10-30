@@ -1,7 +1,7 @@
 import reactLogo from '../../assets/react.svg'
 
 
-const Main = () =>{
+const Logo = () =>{
   return(
     <section className="App">
       <section>
@@ -16,4 +16,4 @@ const Main = () =>{
     )
 }
 
-export default Main
+export default Logo
