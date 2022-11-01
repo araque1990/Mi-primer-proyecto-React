@@ -9,7 +9,7 @@ function App() {
       <Header />
       <h1>Ejemplo de Calculadora con Clases</h1>
       <Logo />
-      <Calculadora />
+      <Calculadora nombre="Mi calculadora" />
     </section>
   )
 }
