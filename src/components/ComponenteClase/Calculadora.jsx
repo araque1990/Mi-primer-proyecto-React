@@ -1,71 +1,46 @@
-import { Component } from "react";
+// hook useState; este nos permite usar el estado de los componentes funcionales
+// useState es una funcion que nos retorna un array y este arreglo contiene dos valores,
+// el estado del componente y una funcion que nos permite actualizar ese estado
+import { useState } from "react";
 
-class Calculadora extends Component {
+const Calculadora = ({ nombre }) => {
 
-  //primer paso del ciclo de vida
-  constructor(props){
-
-  super(props)
-
-  this.state ={
-  numero1: 0, numero2: 0
-  }
-
-  this.setNumber1 = this.setNumber1.bind(this)
-
-  this.setNumber2 = this.setNumber2.bind(this)
-
-  }
-
-  setNumber1(e){
-  this.setState({
-    ...this.state, numero1: e.target.value
+  const [state, setState] = useState({
+    numero1: 0, numero2: 0
+  })
+  
+  const setNumber1 = (e) => {
+    setState ({
+      ...state, numero1: e.target.value
     })
   }
-
-  setNumber2(e){
-  this.setState({
-    ...this.state, numero2: e.target.value
+  
+  const setNumber2 = (e) => {
+    setState ({
+      ...state, numero2: e.target.value
     })
   }
-
-  //segundo paso del ciclo de vida
-  render(){
 
   return(
 
   <>
-    {/* props es una clase por lo cual no se puede descomponer */}
-    <h2> { this.props.nombre } </h2> 
+    <h2> { nombre } </h2> 
 
     <form>
 
-      <input type="number" name="number1" value={this.state.numero1}
-      onChange={ this.setNumber1 }/>
+      <input type="number" name="number1" value={state.numero1}
+      onChange={ setNumber1 }/>
 
-      <input type="number" name="number2" value={this.state.numero2}
-      onChange={ this.setNumber2 }/>
-
-      <input type="submit" name="submit" value="Calcular"/>
+      <input type="number" name="number2" value={state.numero2}
+      onChange={ setNumber2 }/>
 
     </form> 
 
-    <span>Resultado: {Number(this.state.numero1) + Number(this.state.numero2)}</span>
+    <span>Resultado: {Number(state.numero1) + Number(state.numero2)}</span>
 
   </>
 
-  )}
-
-  //tercer paso del ciclo de vida
-  componentDidMount(){
-    console.log("HOLA")
-  }
-
-  //cuarto paso del ciclo de vida
-  componentWillInmount(){
-    //Aquí pongo los eventos que quiero que dejen de ejecutarse cuando no esten en el DOM
-  }
-
+  )
 }
 
 export default Calculadora
