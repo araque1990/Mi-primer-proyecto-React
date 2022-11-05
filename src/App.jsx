@@ -1,15 +1,15 @@
 import './App.css'
-import Calculadora from './components/ComponenteClase/Calculadora'
+import PaqueteCursos from './components/cursos/PaqueteCursos'
 import Header from './components/header/Header'
-import Logo from './components/main/Logo'
+import Logo from './components/Logo/Logo'
 
 function App() {
   return (
     <section>
       <Header />
-      <h1>Ejemplo de Calculadora con Clases</h1>
+      <h1>Mis Cursos</h1>
       <Logo />
-      <Calculadora nombre="Mi calculadora" />
+      <PaqueteCursos />
     </section>
   )
 }
